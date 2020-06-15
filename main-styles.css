@@ -1,16 +1,60 @@
 body {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.1);
+    user-select: none;
 }
 
 /* Other Styles */
-.data__input {
+.main-container {
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+}
+
+.title {
+    box-sizing: border-box;
+}
+
+.input-container,
+.output-container {
+    margin-top: 1.4em;
+    margin-bottom: 1em;
+    display: grid;
+    column-gap: 8px;
+    row-gap: 10px;
+    grid-template-columns: auto auto auto;
+}
+
+.data__input,
+.output-container span {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.2;
+    font-weight: 500;
+    text-align: right;
+    padding-left: 3px;
+}
+
+.input-container span {
+    justify-self: left;
+}
+
+.output-container p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.output-container span {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    padding-right: 16px;
 }
 
 /* Style of ACCORDION */
-.accordion {
-    max-width: 400px;
-    margin: 0 auto;
+.accordion,
+.title {
+    width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     overflow: hidden;
@@ -19,14 +63,17 @@ body {
 }
 
 .accordion__label,
-.accordion__content {
+.accordion__content,
+.title {
     padding: 14px 20px;
 }
 
-.accordion__label {
+.accordion__label,
+.title h3 {
     display: block;
-    color: #fff;
+    font-size: 1.4em;
     font-weight: 500;
+    color: #fff;
     cursor: pointer;
     position: relative;
     transition: background-color 0.1s;
@@ -51,8 +98,8 @@ body {
 
 .accordion__content {
     background-color: #fff;
-    line-height: 1.6;
-    font-size: 0.85em;
+    line-height: 1.3;
+    font-size: 1em;
     display: none;
 }
 
