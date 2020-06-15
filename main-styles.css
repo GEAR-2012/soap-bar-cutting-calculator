@@ -17,7 +17,6 @@ body {
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 .input-container,
 .output-container {
     margin-top: 1.4rem;
@@ -29,10 +28,6 @@ body {
 }
 
 .data__input {
-=======
-.data__input,
-.output-container span {
->>>>>>> efbf63a5ca884ebe6336d9422a01f427c1c5b42c
     font-family: "Quicksand", sans-serif;
     font-size: 1.2rem;
     line-height: 1.6rem;
@@ -115,7 +110,6 @@ body {
     display: none;
 }
 
-
 .accordion__input:checked ~ .accordion__content {
     display: block;
 }
@@ -123,17 +117,3 @@ body {
 .accordion__input:checked ~ .accordion__label::after {
     transform: translateY(-50%) rotate(0.5turn);
 }
-
-
-.input-container,
-.output-container {
-    margin-top: 1.4rem;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.4rem;
-    display: grid;
-    column-gap: 8px;
-    row-gap: 10px;
-    grid-template-columns: auto auto auto;
-}
-
