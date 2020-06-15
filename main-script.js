@@ -9,6 +9,16 @@ let soapData = {
 };
 
 onload = function () {
+    // temporary:
+    const w__o = document.querySelector("#widthOut span");
+    const h__o = document.querySelector("#heightOut span");
+    const w__i = document.querySelector("#widthIn span");
+    const h__i = document.querySelector("#heightIn span");
+    w__o.innerText = window.outerWidth + "px";
+    h__o.innerText = window.outerHeight + "px";
+    w__i.innerText = window.innerWidth + "px";
+    h__i.innerText = window.innerHeight + "px";
+    //
     const allDataInputs = document.querySelectorAll(".data__input");
 
     // read data from local storage
