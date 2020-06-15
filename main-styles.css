@@ -17,18 +17,6 @@ body {
     box-sizing: border-box;
 }
 
-.input-container,
-.output-container {
-    margin-top: 1.4rem;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.4rem;
-    display: grid;
-    column-gap: 8px;
-    row-gap: 10px;
-    grid-template-columns: auto auto auto;
-}
-
 .data__input,
 .output-container span {
     font-family: "Quicksand", sans-serif;
@@ -109,6 +97,7 @@ body {
     display: none;
 }
 
+
 .accordion__input:checked ~ .accordion__content {
     display: block;
 }
@@ -116,3 +105,17 @@ body {
 .accordion__input:checked ~ .accordion__label::after {
     transform: translateY(-50%) rotate(0.5turn);
 }
+
+
+.input-container,
+.output-container {
+    margin-top: 1.4rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    display: grid;
+    column-gap: 8px;
+    row-gap: 10px;
+    grid-template-columns: auto auto auto;
+}
+
