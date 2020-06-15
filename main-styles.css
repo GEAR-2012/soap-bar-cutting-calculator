@@ -30,8 +30,8 @@ body {
 .data__input,
 .output-container span {
     font-family: "Quicksand", sans-serif;
-    font-size: 1.2em;
-    line-height: 1.2;
+    font-size: 1em;
+    line-height: 1.3;
     font-weight: 500;
     text-align: right;
     padding-left: 3px;
@@ -66,7 +66,7 @@ body {
 .accordion__label,
 .accordion__content,
 .title {
-    padding: 14px 20px;
+    padding: 14px 14px;
 }
 
 .accordion__label,

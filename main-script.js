@@ -1,44 +1,31 @@
 // initial data object with basic parameters
-// inp1: length in millimeters
-// inp2: weight in grams
-// inp3: required weight in grams
+// blockLength: length of the soap block in millimeters
+// blockWeight: weight of the soap block in grams
+// barWeight: required weight in grams
 let soapData = {
-    data__1: 250,
-    data__2: 1000,
-    data__3: 100,
+    blockLength: 250,
+    blockWeight: 1000,
+    barWeight: 100,
 };
 
 onload = function () {
-    // temporary:
-    const w__o = document.querySelector("#widthOut span");
-    const h__o = document.querySelector("#heightOut span");
-    const w__i = document.querySelector("#widthIn span");
-    const h__i = document.querySelector("#heightIn span");
-    w__o.innerText = window.outerWidth + "px";
-    h__o.innerText = window.outerHeight + "px";
-    w__i.innerText = window.innerWidth + "px";
-    h__i.innerText = window.innerHeight + "px";
-    //
     const allDataInputs = document.querySelectorAll(".data__input");
-
     // read data from local storage
-    if (localStorage.getItem("soapData_1")) {
-        soapData.data__1 = parseFloat(localStorage.getItem("soapData_1"));
+    if (localStorage.getItem("blockLength")) {
+        soapData.blockLength = parseFloat(localStorage.getItem("blockLength"));
     }
-    if (localStorage.getItem("soapData_2")) {
-        soapData.data__2 = parseFloat(localStorage.getItem("soapData_2"));
+    if (localStorage.getItem("blockWeight")) {
+        soapData.blockWeight = parseFloat(localStorage.getItem("blockWeight"));
     }
-    if (localStorage.getItem("soapData_3")) {
-        soapData.data__3 = parseFloat(localStorage.getItem("soapData_3"));
+    if (localStorage.getItem("barWeight")) {
+        soapData.barWeight = parseFloat(localStorage.getItem("barWeight"));
     }
-
     // set up input elements
     allDataInputs.forEach((item, i) => {
         item.addEventListener("change", getInput);
         let dataArray = Object.values(soapData);
         item.value = dataArray[i];
     });
-
     displayOutput(calculateSoap(soapData));
 };
 
@@ -48,15 +35,14 @@ function getInput() {
     let min = parseInt(this.min);
     let max = parseInt(this.max);
     let value = parseFloat(this.value, 10);
-
     // 'optimist' validation
     if (!isNaN(value) && value >= min && value <= max) {
         // store new data
         soapData[id] = value;
         // write parameters into local storage
-        localStorage.setItem("soapData_1", soapData.data__1);
-        localStorage.setItem("soapData_2", soapData.data__2);
-        localStorage.setItem("soapData_3", soapData.data__3);
+        localStorage.setItem("blockLength", soapData.blockLength);
+        localStorage.setItem("blockWeight", soapData.blockWeight);
+        localStorage.setItem("barWeight", soapData.barWeight);
         // call the display output function
         displayOutput(calculateSoap(soapData));
     } else {
@@ -82,9 +68,9 @@ function calculateSoap(obj) {
     let c__l; // cutting length in millimeter
     let f__a; // final amount of soap bars
     // after cutting each bar should be same or more than the required weight
-    f__a = parseInt(obj.data__2 / obj.data__3, 10);
-    c__l = parseFloat((obj.data__1 / f__a).toFixed(1), 10);
-    f__w = parseFloat((obj.data__2 / f__a).toFixed(1), 10);
+    f__a = parseInt(obj.blockWeight / obj.barWeight, 10);
+    c__l = parseFloat((obj.blockLength / f__a).toFixed(1), 10);
+    f__w = parseFloat((obj.blockWeight / f__a).toFixed(1), 10);
     return [c__l, f__w, f__a];
 }
 

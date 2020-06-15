@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Soap Cutting App</title>
         <!-- Google fonts -->
         <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
@@ -33,10 +33,10 @@
                         <h3>Preparation</h3>
                         <ul>
                             <li>
-                                <p>Cut the ugly ends of the big soap bar.</p>
+                                <p>Cut the ugly ends of the soap block.</p>
                             </li>
                             <li>
-                                <p>Clean up all edges of the big soap bar.</p>
+                                <p>Clean up all edges of the soap block.</p>
                             </li>
                         </ul>
                     </div>
@@ -57,13 +57,13 @@
                         <ul>
                             <li>
                                 <p>
-                                    Measure carefully the length of the big soap
-                                    bar in millimeters.
+                                    Measure carefully the length of the soap
+                                    block in millimeters.
                                 </p>
                             </li>
                             <li>
                                 <p>
-                                    Measure the exact weight of the big soap bar
+                                    Measure the exact weight of the soap block
                                     in grams.
                                 </p>
                             </li>
@@ -85,20 +85,22 @@
                         <h3>Initial parameters</h3>
                         <p>Enter the measured parameters below.</p>
                         <div class="input-container">
-                            <label for="data__1">length in millimeters:</label>
+                            <label for="blockLength"
+                                >length in millimeters:</label
+                            >
                             <input
                                 type="number"
-                                id="data__1"
+                                id="blockLength"
                                 class="data__input"
                                 min="20"
                                 max="600"
                             />
                             <span>mm</span>
 
-                            <label for="data__2">weight in grams:</label>
+                            <label for="blockWeight">weight in grams:</label>
                             <input
                                 type="number"
-                                id="data__2"
+                                id="blockWeight"
                                 class="data__input"
                                 min="100"
                                 max="3000"
@@ -122,10 +124,10 @@
                         <h3>Final weight</h3>
                         <p>Enter the required weight of the final soap bar.</p>
                         <div class="input-container">
-                            <label for="data__3">weight in grams:</label>
+                            <label for="barWeight">weight in grams:</label>
                             <input
                                 type="number"
-                                id="data__3"
+                                id="barWeight"
                                 class="data__input"
                                 min="50"
                                 max="300"
@@ -164,11 +166,6 @@
                 <!--  -->
             </div>
         </div>
-        <p id="widthOut">Outer Width: <span></span></p>
-        <p id="heightOut">Outer Height: <span></span></p>
-        <p id="widthIn">Inner Width: <span></span></p>
-        <p id="heightIn">Inner Height: <span></span></p>
-
         <script src="main-script.js"></script>
     </body>
 </html>
