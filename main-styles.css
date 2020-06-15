@@ -1,6 +1,6 @@
 body {
     padding: 4px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(133, 16, 216, 0.1);
     user-select: none;
     font-family: "Quicksand", sans-serif;
 }
@@ -21,22 +21,21 @@ body {
 .output-container {
     margin-top: 1.4rem;
     margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.4rem;
     display: grid;
-    column-gap: 8px;
-    row-gap: 10px;
+    gap: 10px 12px;
     grid-template-columns: auto auto auto;
+    justify-content: start;
 }
 
-.data__input,
-.output-container span {
+.data__input {
     font-family: "Quicksand", sans-serif;
-    font-size: 1rem;
-    line-height: 1.3rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
     font-weight: 500;
     text-align: right;
-    padding-left: 3px;
+    padding: 0 6px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
 }
 
 .input-container span {
@@ -50,8 +49,10 @@ body {
 
 .output-container span {
     border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
-    padding-right: 6px;
+    border-radius: 8px;
+    padding: 0 6px 0 12px;
+    text-align: right;
+    font-weight: 500;
 }
 
 /* Style of ACCORDION */
@@ -59,9 +60,9 @@ body {
 .title {
     width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    border-radius: 12px;
     overflow: hidden;
-    background-color: #009578;
+    background-color: rgba(133, 16, 216, 0.8);
 }
 
 .accordion__label,
