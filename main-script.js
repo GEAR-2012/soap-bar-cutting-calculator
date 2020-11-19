@@ -1,4 +1,4 @@
-// initial data object with basic parameters
+// 'soapData' is the initial data object with basic parameters
 // blockLength: length of the soap block in millimeters
 // blockWeight: weight of the soap block in grams
 // barWeight: required weight in grams
@@ -64,12 +64,13 @@ function getInput() {
 }
 
 function calculateSoap(obj) {
+    let len__comp = 5; // length compensation (because the last bar was always few mm longer but the other bars was lihgter than expected)
     let f__w; // final weight in gram
     let c__l; // cutting length in millimeter
     let f__a; // final amount of soap bars
     // after cutting each bar should be same or more than the required weight
     f__a = parseInt(obj.blockWeight / obj.barWeight, 10);
-    c__l = parseFloat((obj.blockLength / f__a).toFixed(1), 10);
+    c__l = parseFloat(((obj.blockLength + len__conp) / f__a).toFixed(1), 10);
     f__w = parseFloat((obj.blockWeight / f__a).toFixed(1), 10);
     return [c__l, f__w, f__a];
 }
