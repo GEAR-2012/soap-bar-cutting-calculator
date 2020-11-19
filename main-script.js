@@ -70,7 +70,7 @@ function calculateSoap(obj) {
     let f__a; // final amount of soap bars
     // after cutting each bar should be same or more than the required weight
     f__a = parseInt(obj.blockWeight / obj.barWeight, 10);
-    c__l = parseFloat(((obj.blockLength + len__conp) / f__a).toFixed(1), 10);
+    c__l = parseFloat(((obj.blockLength + len__comp) / f__a).toFixed(1), 10);
     f__w = parseFloat((obj.blockWeight / f__a).toFixed(1), 10);
     return [c__l, f__w, f__a];
 }
